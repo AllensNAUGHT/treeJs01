@@ -32,9 +32,6 @@ export class App {
     this.brick.material = new MeshPhongMaterial({ color });
     /* fin DU C/V */
 
-
-
-
  /* ************* CREATION D'un nouvel element ************  */
 
     this.sphere=new Mesh();
@@ -62,7 +59,7 @@ export class App {
     // ajoute la cible de la lumiere a notre scene
     this.scene.add( directionalLight.target);
 
-    // la positio nde la cible de la lumiere on l'assigne a -55 -55 ... 
+    // la position de la cible de la lumiere on l'assigne a -55 -55 ... 
     //CIBLE 
     directionalLight.target.position.copy(new Vector3(-55, -55, -55));
    
@@ -79,7 +76,7 @@ export class App {
     //background
     this.renderer.setClearColor(new Color(0,1,0));
 
-    //clic droit go to definition > fonctio nde rendu  
+    //clic droit go to definition > fonction de rendu  
     this.render();
   }
 
@@ -94,10 +91,9 @@ export class App {
   private render() {
     // on demande au renderer de treejs de rendre une scene avec ( telle scene et telle camera) 
     this.renderer.render(this.scene, this.camera);
-    //on dit  a js a la prochaine frame refait un rendu de la scene 
+    //on dit a js de refaire un rendu de la scene a la prochaine frame
     //premiere fois constructeur on appelle le rendu puis a la prochaine frame on recup rendu etc etc a l'infini 
-
-    //demane a js : a la prochaine frame de rendu de rappeler la fonction random 
+    //demande a js : a la prochaine frame de rendu de rappeler la fonction random 
     requestAnimationFrame(() => this.render());
 
     //adapte la camera et le renderer , au cas ou changement de taille on recuperer les parametres
